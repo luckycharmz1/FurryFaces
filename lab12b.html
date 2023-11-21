@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Charmaine Washington, Lab12B, GDS089, 20 Nov 2023-->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Furry Faces</title>
+    <style>
+        body{text-align: center; font-family: sans-serif;
+        background-color: darkcyan; 
+    }
+    div#grid{margin: 1em auto; width: 80%;}
+    img{width: 25%; object-fit: cover; aspect-ratio: 5/4;
+        margin: 8px; padding: 8px; background-color: white;
+        border: 1px solid #888; /*#864;*/ 
+    }
+    img.tall{aspect-ratio: 4/5;}
+    img.square{aspect-ratio: 1/1;}
+    img.wide{aspect-ratio: 5/4;}
+    div#controls button{width: 80px; height: 36px;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        var names = [
+            "puppy", "Shadow", "ShadowsTeddy", "carride",
+            "shower1", "shower2", "sightseeing","passengerprince", 
+            "trouble", "costumes", "itsanavocado", "carwindow" ];
+
+        $(document).ready(setup);
+
+        function setup() {
+            for (var i=0; i<names.length; i++) {
+                $('#grid').append("<img src='images/" + names[i] + ".jpg'" + "/>");
+            }
+                $("#grid img").hover(showColor, hideColor);
+                $("#controls button").click(changeAspectRatio);
+            
+        }
+
+    </script>
+</head>
+
+<h1>Furry Faces</h1>
+<div id="grid">
+
+</div>
+<body>
+
+</body>
+</html>
