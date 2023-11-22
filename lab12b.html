@@ -10,7 +10,7 @@
         background-color: darkcyan; 
     }
     div#grid{margin: 1em auto; width: 80%;}
-    img{width: 25%; object-fit: cover; aspect-ratio: 5/4;
+    img{width: 25%; object-fit: cover; aspect-ratio: 1/1;
         margin: 8px; padding: 8px; background-color: white;
         border: 1px solid #888; /*#864;*/ 
     }
@@ -37,10 +37,33 @@
             
         }
 
+    function showColor(e) {
+        var img = $(this).attr("src");
+        console.log(img);
+        $(this).attr("src", img.replace("color/", "images/"));
+    }
+
+    function hideColor(e) {
+        var img = $(this).attr("src");
+        console.log(img);
+        $(this).attr("src", img.replace("images/", "color/"));
+    }
+    
+    function changeAspectRatio(e) {
+        $("#grid img").removeClass().addClass($(this).attr("id"));
+    }
+
     </script>
 </head>
 
 <h1>Furry Faces</h1>
+
+<div id="controls">
+    <button id='tall'>Tall</button>
+    <button id='square'>Square</button>
+    <button id='wide'>Wide</button>
+</div>
+
 <div id="grid">
 
 </div>
